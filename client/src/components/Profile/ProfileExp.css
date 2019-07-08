@@ -1,0 +1,154 @@
+.profile-exp-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+
+.profile-exp {
+    display:flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width:60%;
+    height:100%;
+    margin-top:0.5rem;
+    box-shadow: 1px 1px 4px black;
+    padding-bottom:2rem;
+    background-color:#F5F5F5;
+    margin-bottom: 2rem;
+}
+
+.application-class {
+    width:90%;
+}
+
+.Profile-exp-header {
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: flex-end;
+    align-items: center;
+    height:100%;
+}
+
+.profile-exp-container{
+    display:flex;
+}
+
+.profile-exp-list {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    width:100%;
+    margin-bottom: 0.4rem;
+    border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
+    border-top: 1px rgba(0, 0, 0, 0.2) solid;
+}
+
+.company-header {
+    grid-column: 2 / 4;
+
+}
+
+.title-header {
+    grid-column: 5 / 7;
+
+}
+
+.years-header {
+    grid-column: 8 / 10;
+}
+
+
+
+.field-of-study-header {
+    grid-column: 6/7;
+}
+
+.exp-list__date__fos {
+    grid-column: 6/7;
+}
+
+.exp-list__date {
+    grid-column: 8 / 10;
+
+
+}
+.exp-list__degree {
+    grid-column: 5 / 7;
+    
+}
+.exp-list__school {
+    grid-column: 2 / 4;
+    
+}
+
+
+.profile-exp-list h4 {
+    margin:0rem;
+    padding:0;
+}
+
+.exp-list {
+    width:100%;
+    margin: 0.4rem 0;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width:100%;
+}
+
+.exp-list h5 {
+    margin:0;
+    padding:0;
+}
+
+
+
+@media(max-width:40rem){
+    .profile-exp {
+        width:90%;
+    }
+
+    .profile-exp-list {
+    display:grid;
+    grid-template-rows: auto;
+    }
+    .company-header {
+    grid-column: 2 / 4;
+
+}
+
+
+.title-header {
+    grid-column: 4 / 7;
+}
+
+.years-header {
+    grid-column: 8 / 10;
+}
+
+.exp-list__date {
+    grid-column: 8 / 10;
+
+
+}
+.exp-list__degree {
+    grid-column: 5 / 7;
+    
+}
+
+.exp-list__degree {
+    grid-column: 4 / 5;
+    
+}
+.exp-list__school {
+    grid-column: 2 / 4;
+    
+}
+
+}
+
+
+
+

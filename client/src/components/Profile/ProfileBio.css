@@ -1,0 +1,55 @@
+.profile-bio-container {
+    margin-top: 1.5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+
+.profile-bio {
+    display:flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width:60%;
+    margin-top:0.5rem;
+    box-shadow: 1px 1px 4px black;
+    height:100%;
+    background-color:#F5F5F5;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.Profile-bio-header {
+    position: relative;
+    width:100%;
+}
+
+.Profile-bio-header h2 {
+    text-align: center;
+    width:100%;
+}
+
+.profile-bio__text {
+    display:flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding:0rem 2rem;
+    width:100%;
+    line-height: 1.7rem;
+}
+
+.profile-bio__p {
+    position: absolute;
+    padding:0rem 2rem;
+    width:100%;
+    line-height: 1.7rem;
+}
+
+@media (max-width:40rem){
+    .profile-bio {
+        width:90%;
+    }
+
+}
+
