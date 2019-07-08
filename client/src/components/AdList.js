@@ -23,7 +23,7 @@ const AdList = ({ getPublicAds, posts: { ads, loading } }) => {
           {!loading &&
             ads &&
             ads.map(ad => (
-              <div class="single-ad-container">
+              <div key={ad._id} class="single-ad-container">
                 <Link className="link" to={`/ad/${ad._id}`}>
                   <div class="single-ad">
                     <div class="job-title">{ad.title}</div>
