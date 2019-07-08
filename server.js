@@ -3,19 +3,25 @@ const userRouter = require("./routes/users");
 const adsRouter = require("./routes/ads");
 const profileRouter = require("./routes/profile");
 const mongoConnect = require("./db/database");
+const path = require("path");
 
 const app = express();
 
 app.use(express.json({ extended: false }));
 
-app.post("/", (req, res) => {
-  res.send("qweqweqwe");
-});
-
 app.use(userRouter);
 app.use(adsRouter);
 app.use(profileRouter);
 mongoConnect();
+
+//serve static assets in production
+if (process.env.NODE_ENV == "production") {
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 const PORT = process.env.PORT || 5000;
 
