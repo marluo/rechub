@@ -29,17 +29,17 @@ const Navbare = ({
         <nav class="nav">
           <ul class="nav-items">
             {/* laddas om inte är inloggad */}
-            {loading && !role === "recruiter" ? null : (
+            {isAuthed && role === "recruiter" ? (
               <li>
                 <Link to={`/myads/`}>My Ads</Link>
               </li>
-            )}
-            {loading && !role === "recruiter" ? null : (
+            ) : null}
+            {isAuthed && role === "recruiter" ? (
               <li>
                 <Link to={`/post/ad`}>Post Ad</Link>
               </li>
-            )}
-            {loading && !role === "recruiter" ? (
+            ) : null}
+            {isAuthed && !role === "worker" ? (
               <li>
                 <Link to={`/myapplications/`}>My Applications</Link>
               </li>
