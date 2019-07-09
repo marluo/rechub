@@ -356,7 +356,11 @@ select {
 }
 
 .login-button-navbar {
+  position: relative;
   height:2rem;
+  display:flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
   border: 0;
   width:8.5rem;
@@ -368,7 +372,14 @@ select {
   text-transform: uppercase;
 }
 
+.login-button-navbar p {
+    font-size: 0.9rem;
+    margin:0;
+}
+
+
 .login-nav {
+    position: absolute;
     display:flex;
     flex-direction: row;
 }

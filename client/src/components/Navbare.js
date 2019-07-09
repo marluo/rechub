@@ -53,7 +53,7 @@ const Navbare = ({
                   onClick={() => showModal()}
                   className="login-button-navbar"
                 >
-                  LOGIN/REGISTER
+                  <p>LOGIN/REGISTER</p>
                 </button>
               ) : (
                 <Link to={`/profile/${user._id}`} className="link-flex">
