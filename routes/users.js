@@ -15,7 +15,7 @@ const User = require("../models/User");
 // @@desc - regga en user och skicka token
 // @@who - public
 
-router.post("/users/register", async (req, res) => {
+router.post("/api/users/register", async (req, res) => {
   try {
     //destructa objektet
     const { email, username, password, role, firstName, lastName } = req.body;
@@ -72,7 +72,7 @@ router.post("/users/register", async (req, res) => {
 // @@desc - logga in user och skicka token
 // @@who - public
 
-router.post("/users/login", async (req, res) => {
+router.post("/api/users/login", async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });

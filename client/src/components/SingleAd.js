@@ -8,7 +8,12 @@ import { getSingleAd } from "../actions/adActions";
 import "./SingleAd.css";
 import ApplyForAd from "./ApplyForAd";
 
-const SingleAd = ({ getSingleAd, match: { params }, ads: { ad, loading } }) => {
+const SingleAd = ({
+  getSingleAd,
+  match: { params },
+  ads: { ad, loading },
+  auth
+}) => {
   useEffect(() => {
     getSingleAd(params.id);
   }, [getSingleAd]);
@@ -40,6 +45,7 @@ const SingleAd = ({ getSingleAd, match: { params }, ads: { ad, loading } }) => {
                   setApplyView={setApplyView}
                   adButton={apply.ad}
                   buttonText={buttonText}
+                  auth={auth}
                 />
               </div>
             </div>
@@ -68,7 +74,8 @@ SingleAd.propTypes = {};
 
 const mapStateToProps = state => {
   return {
-    ads: state.ads
+    ads: state.ads,
+    auth: state.auth
   };
 };
 

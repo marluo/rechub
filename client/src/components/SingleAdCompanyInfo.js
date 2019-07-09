@@ -9,7 +9,8 @@ const SingleAdCompanyInfo = ({
   subtitle,
   setApplyView,
   adButton,
-  ad
+  ad,
+  auth: { isAuthed, loading }
 }) => {
   return (
     <Fragment>
@@ -52,30 +53,37 @@ const SingleAdCompanyInfo = ({
           <span>Contact Phone</span>
           <span>{ad.contact ? ad.contact.phone : "Loading..."}</span>
         </div>
-
         <div className="apply-container">
-          {adButton === "ad" ? (
-            <button
-              className="apply-button"
-              onClick={() =>
-                setApplyView({
-                  ad: "apply",
-                  openApply: "open-apply"
-                })
-              }
-            >
-              Apply Now
-            </button>
+          {isAuthed && !loading ? (
+            <Fragment>
+              {adButton === "ad" ? (
+                <button
+                  className="apply-button"
+                  onClick={() =>
+                    setApplyView({
+                      ad: "apply",
+                      openApply: "open-apply"
+                    })
+                  }
+                >
+                  Apply Now
+                </button>
+              ) : (
+                <button
+                  className="apply-button"
+                  onClick={() =>
+                    setApplyView({
+                      ad: "ad"
+                    })
+                  }
+                >
+                  Go Back
+                </button>
+              )}
+            </Fragment>
           ) : (
-            <button
-              className="apply-button"
-              onClick={() =>
-                setApplyView({
-                  ad: "ad"
-                })
-              }
-            >
-              Go Back
+            <button className="apply-button" disabled>
+              Login to Apply
             </button>
           )}
         </div>

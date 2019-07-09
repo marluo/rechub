@@ -767,6 +767,8 @@ button {
 
 .sex {
     width:20rem;
+    display: flex;
+    justify-content: center;
 }
 .single-job__companyx {
     border-radius: 10px;
@@ -834,6 +836,10 @@ button {
   font-family: 'Source Sans Pro', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.apply-button:disabled {
+    background: grey;
 }
 
 

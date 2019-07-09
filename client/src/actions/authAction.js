@@ -14,7 +14,7 @@ export const login = (email, password, history) => async dispatch => {
 
   try {
     //får tillbaka token
-    const response = await axios.post("/users/login", body, config);
+    const response = await axios.post("/api/users/login", body, config);
 
     dispatch({
       type: "LOGIN_USER",
@@ -57,7 +57,7 @@ export const register = ({
   //gör om objekt till JSON
 
   try {
-    const response = await axios.post("/users/login", body, config);
+    const response = await axios.post("/api/users/login", body, config);
 
     dispatch({
       type: "LOGIN_USER",
