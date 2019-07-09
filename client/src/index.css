@@ -600,7 +600,7 @@ form {
 }
 
 
-.single-ad-container {
+.single-dd-container {
     border-top: 1px solid rgba(117, 117, 117, 0.5);
     width:45%;
     position: relative;
@@ -608,7 +608,7 @@ form {
 }
 
 
-.single-ad {
+.single-dd {
     margin: 1rem 0;
     padding:1px;
     display: flex;

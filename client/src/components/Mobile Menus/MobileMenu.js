@@ -24,7 +24,7 @@ const MobileMenu = ({
         <div className="mobile-menu-items">
           <ul className="mobile-menu-ul">
             <li className="mobile-login-avatar">
-              {!isAuthed && loading ? (
+              {!isAuthed ? (
                 <button
                   onClick={() => showModal()}
                   className="login-button-navbar"

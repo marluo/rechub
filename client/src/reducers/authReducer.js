@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
         ...state,
         user: null,
         loading: false,
-        isAuthed: true,
+        isAuthed: false,
         error: payload
       };
     }

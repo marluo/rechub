@@ -57,7 +57,7 @@ export const register = ({
   //gör om objekt till JSON
 
   try {
-    const response = await axios.post("/api/users/login", body, config);
+    const response = await axios.post("/api/users/register", body, config);
 
     dispatch({
       type: "LOGIN_USER",
