@@ -10,7 +10,7 @@ const validateUser = user => {
       .regex(/^[a-zA-Z0-9]{3,30}$/)
       .required(),
     role: Joi.any()
-      .valid("worker", "recruiter")
+      .valid("prospect", "recruiter")
       .label("Only worker or recruiter is valid")
       .required(),
     firstName: Joi.string()

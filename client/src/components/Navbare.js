@@ -11,7 +11,7 @@ import { showModal, showMobileMenu } from "../actions/modalActions";
 const Navbare = ({
   showModal,
   showMobileMenu,
-  auth: { isAuthed, firstName, lastName, role, loading, user }
+  auth: { isAuthed, loading, user }
 }) => {
   const lol = "qweqweqwe";
   return (
@@ -29,17 +29,17 @@ const Navbare = ({
         <nav class="nav">
           <ul class="nav-items">
             {/* laddas om inte är inloggad */}
-            {isAuthed && role === "recruiter" ? (
+            {isAuthed && user.role === "recruiter" ? (
               <li>
                 <Link to={`/myads/`}>My Ads</Link>
               </li>
             ) : null}
-            {isAuthed && role === "recruiter" ? (
+            {isAuthed && user.role === "recruiter" ? (
               <li>
                 <Link to={`/post/ad`}>Post Ad</Link>
               </li>
             ) : null}
-            {isAuthed && !role === "worker" ? (
+            {isAuthed && user.role === "prospect" ? (
               <li>
                 <Link to={`/myapplications/`}>My Applications</Link>
               </li>
@@ -58,7 +58,9 @@ const Navbare = ({
               ) : (
                 <Link to={`/profile/${user._id}`} className="link-flex">
                   <img class="avatar" src={avatar} />
-                  <span>Marcus Lundgren</span>
+                  <span>
+                    {user.firstName} {user.lastName}
+                  </span>
                 </Link>
               )}
             </li>

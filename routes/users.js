@@ -59,7 +59,7 @@ router.post("/api/users/register", async (req, res) => {
         //om error
         if (err) throw err;
         //skicka tillbaka token
-        return res.json({ token });
+        return res.json({ id, token, firstName, lastName, role, username });
       }
     );
   } catch (err) {
