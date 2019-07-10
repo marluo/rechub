@@ -91,7 +91,7 @@ const Profile = ({
         </Fragment>
       );
     }
-    if (!loading && profile === null && profile.user === null) {
+    if (!loading && profile === null) {
       return (
         <Fragment>
           <JobAds />
@@ -99,7 +99,7 @@ const Profile = ({
         </Fragment>
       );
     }
-    if (!loading || !profile === null || !profile.user === null) {
+    if (!loading || !profile === null) {
       return (
         <Fragment>
           <JobAds
