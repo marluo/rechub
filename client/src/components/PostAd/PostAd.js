@@ -12,7 +12,6 @@ const PostAd = ({ postNewAd, history }) => {
     position: "",
     company: "",
     location: "",
-    date: "",
     contactPhoneNumber: "",
     contactEmailAdress: "",
     contactName: "",
@@ -25,7 +24,7 @@ const PostAd = ({ postNewAd, history }) => {
     applyLastDate: ""
   });
 
-  console.log("wwwwww", history);
+  console.log("wwwwww", postFormData);
   //toggle register/login
   const onPostAdChange = event =>
     // vi kan dynamiskt beroende på vilken input ändra staten här. ...formdata ser till att staten behålls och inte skrivs över.

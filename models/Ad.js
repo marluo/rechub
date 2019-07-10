@@ -51,7 +51,7 @@ const AdSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
-    date: Date.now()
+    default: Date.now()
   },
   category: {
     type: String
