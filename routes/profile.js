@@ -23,7 +23,9 @@ router.get("/api/profile/:id", decode, async (req, res) => {
     }
 
     //hämta profil från databas, populatea från user-fältet.
-    const profile = await Profile.findOne({ user: req.user }).populate("user");
+    const profile = await Profile.findOne({ user: req.params.id }).populate(
+      "user"
+    );
 
     //om profilen inte finns
     if (!profile) {

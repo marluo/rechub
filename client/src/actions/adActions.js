@@ -109,7 +109,7 @@ export const postApplicationToAd = formData => async dispatch => {
 
 export const postNewAd = (postFormData, history) => async dispatch => {
   try {
-    console.log(history);
+    console.log(postFormData);
     const body = JSON.stringify(postFormData);
     const config = {
       headers: {

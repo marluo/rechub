@@ -16,7 +16,7 @@ const AdList = ({ getPublicAds, posts: { ads, loading } }) => {
   }, [getPublicAds]);
   return (
     <Fragment>
-      <JobAds title="qweqweAAAAAAAA" />
+      <JobAds title="Feedback both ways" />
       <div className="full-container">
         <SearchBar />
         <div class="jobs-container">

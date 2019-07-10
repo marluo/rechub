@@ -91,7 +91,7 @@ const Profile = ({
         </Fragment>
       );
     }
-    if (!loading && profile === null && user === null) {
+    if (!loading && profile === null && profile.user === null) {
       return (
         <Fragment>
           <JobAds />
@@ -99,7 +99,7 @@ const Profile = ({
         </Fragment>
       );
     }
-    if (!loading || !profile === null || !user === null) {
+    if (!loading || !profile === null || !profile.user === null) {
       return (
         <Fragment>
           <JobAds
@@ -109,6 +109,7 @@ const Profile = ({
           <ProfileTop
             username={profile.user.username}
             profileTitle={profile.profileTitle}
+            role={profile.user.role}
           />
           <ProfileBio
             handleBioSubmit={handleBioSubmit}

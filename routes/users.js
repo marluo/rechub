@@ -5,6 +5,7 @@ const validator = require("validator");
 const jwt = require("jsonwebtoken");
 const decode = require("../middleware/decode");
 const bcrypt = require("bcryptjs");
+const Profile = require("../models/Profile");
 const router = express.Router();
 const Joi = require("@hapi/joi");
 const schema = require("../validation/registerjoi");
@@ -21,7 +22,12 @@ router.post("/api/users/register", async (req, res) => {
     const { email, username, password, role, firstName, lastName } = req.body;
     const { error } = validateUser(req.body);
     if (error) {
-      return res.json({ errors: error.details });
+      console.log(error);
+      res.status(422).json({
+        status: "error",
+        message: "Invalid request data",
+        data: error.details
+      });
     }
 
     //hitta user i db
@@ -43,6 +49,11 @@ router.post("/api/users/register", async (req, res) => {
       lastName
     });
 
+    const profile = new Profile({
+      user: newUser._id
+    });
+    await profile.save();
+
     //hashar lösenordet
     newUser.password = await bcrypt.hash(newUser.password, 10);
     //sparar user
@@ -59,7 +70,14 @@ router.post("/api/users/register", async (req, res) => {
         //om error
         if (err) throw err;
         //skicka tillbaka token
-        return res.json({ id, token, firstName, lastName, role, username });
+        return res.json({
+          id: newUser.id,
+          token,
+          firstName,
+          lastName,
+          role,
+          username
+        });
       }
     );
   } catch (err) {

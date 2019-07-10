@@ -43,7 +43,7 @@ const AdSchema = new mongoose.Schema({
     required: true
   },
   start_date: {
-    type: String,
+    type: Date,
     required: true
   },
   homepage: {

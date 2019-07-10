@@ -33,9 +33,7 @@ const MyApplications = ({
     }
   }, [getAllApplications]);
 
-  if (!auth.loading) {
-    return <Redirect to="/" />;
-  }
+  
 
   const mapperHelper = workerApplications ? myApplications : adApplications;
 

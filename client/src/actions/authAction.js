@@ -69,7 +69,7 @@ export const register = ({
   } catch (err) {
     dispatch({
       type: "LOGIN_ERROR",
-      payload: err
+      payload: err.response
     });
   }
 };

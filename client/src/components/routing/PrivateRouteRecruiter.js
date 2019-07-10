@@ -7,7 +7,7 @@ const PrivateRouteRecruiter = ({ component: Component, auth, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      !auth.isAuthed && !auth.loading && auth.user.role === "worker" ? (
+      !auth.isAuthed && !auth.loading && auth.user.role === "recruiter" ? (
         <Redirect to="/" />
       ) : (
         <Component {...props} />

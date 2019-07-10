@@ -7,7 +7,8 @@ const ProfileTop = ({
   username,
   firstName,
   lastName,
-  noBoxShadow
+  noBoxShadow,
+  role
 }) => {
   return (
     <div className="profile-top-container">
@@ -17,7 +18,7 @@ const ProfileTop = ({
         </div>
         <div className="profile-user">
           <h2>{username ? username : `${firstName} ${lastName}`}</h2>
-          <p>{profileTitle}</p>
+          <p>{role}</p>
         </div>
       </div>
     </div>

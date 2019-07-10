@@ -6,13 +6,9 @@ const ProfileSchema = new mongoose.Schema({
     ref: "user"
   },
   profileTitle: {
-    type: String,
-    required: true
-  },
-  currentStatus: {
     type: String
   },
-  phoneNumber: {
+  currentStatus: {
     type: String
   },
   profileBio: {
