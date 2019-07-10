@@ -18,7 +18,8 @@ const Profile = ({
   profile: { profile, user, error, loading },
   submitBio,
   submitEdu,
-  submitExp
+  submitExp,
+  auth
 }) => {
   const [editProfile, setEditProfile] = useState({
     edit: false
@@ -120,6 +121,8 @@ const Profile = ({
             profileBio={profile.profileBio}
             firstName={profile.user.firstName}
             lastName={profile.user.lastName}
+            userId={profile.user._id}
+            authId={auth.user._id}
           />
           <ProfileExp
             jobs={profile.jobs}
@@ -129,6 +132,8 @@ const Profile = ({
             toggleEdit={toggleEdit}
             setToggleEdit={setToggleEdit}
             handleExpSubmit={handleExpSubmit}
+            userId={profile.user._id}
+            authId={auth.user._id}
           />
           <ProfileExp
             education={profile.education}
@@ -138,6 +143,9 @@ const Profile = ({
             toggleEdit={toggleEdit}
             setToggleEdit={setToggleEdit}
             handleEduSubmit={handleEduSubmit}
+            userId={profile.user._id}
+            authId={profile.user._id}
+            userId={auth.user._id}
           />
         </Fragment>
       );
@@ -151,7 +159,8 @@ Profile.propTypes = {};
 
 const mapStateToProps = state => {
   return {
-    profile: state.profile
+    profile: state.profile,
+    auth: state.auth
   };
 };
 

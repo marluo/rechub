@@ -18,7 +18,9 @@ const ProfileExp = ({
   setToggleEdit,
   handleExpSubmit,
   handleEduSubmit,
-  applicationExp
+  applicationExp,
+  authId,
+  userId
 }) => {
   const mapper = jobs ? jobs : education;
 
@@ -35,7 +37,7 @@ const ProfileExp = ({
           <div className="flex-right-button">
             <h2>{JobExp || EduExp}</h2>
           </div>
-          {!applicationExp && (
+          {!applicationExp && userId === authId && (
             <button
               type="submit"
               value="submit exp"

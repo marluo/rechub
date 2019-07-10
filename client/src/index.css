@@ -1653,12 +1653,6 @@ body {
     width:5rem;
 }
 
-.flex-right-button{
-    justify-content: center;
-    align-items: center;
-    width:10%;
-}
-
 .profile-bio-header-edit {
     display:flex;
     width:100%;
@@ -1666,7 +1660,7 @@ body {
 }
 
 .flex-right-button {
-    position: absolute;
+    position: relative;
     display:flex;
     width:100%;
     justify-content: center;

@@ -10,7 +10,9 @@ const ProfileBio = ({
   editProfile,
   handleBioSubmit,
   onBioChange,
-  editBio
+  editBio,
+  userId,
+  authId
 }) => {
   return (
     <div className="profile-bio-container">
@@ -18,12 +20,14 @@ const ProfileBio = ({
         <div className="Profile-bio-header">
           <Fragment>
             <div className="profile-bio-header-edit">
-              <button
-                className="width-edit margin-button-edit general-button"
-                onClick={() => setEditProfile({ edit: !editProfile.edit })}
-              >
-                {editProfile.edit === true ? "Go back" : "Edit Bio"}
-              </button>
+              {userId === authId && (
+                <button
+                  className="width-edit margin-button-edit general-button"
+                  onClick={() => setEditProfile({ edit: !editProfile.edit })}
+                >
+                  {editProfile.edit === true ? "Go back" : "Edit Bio"}
+                </button>
+              )}
             </div>
           </Fragment>
           <h2>
